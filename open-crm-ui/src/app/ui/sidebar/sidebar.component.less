@@ -1,0 +1,30 @@
+//Declare Variables
+@width1 : 300px;
+@full-width : 100%;
+
+//Sidebar
+#sidebar {
+    width : @width1;
+}
+
+.sidebar-nav {
+    list-style: none;
+    margin : 0;
+    padding: 0;
+    width : @width1;
+    li {
+        width: @full-width;
+        line-height: 30px;
+        a {
+            text-decoration: none;
+            display: block;
+            padding: 10px 15px;
+        }
+        &:hover {
+            color : #fff;
+        }
+    }
+    &:hover {
+        color : #fff;
+    }
+}
