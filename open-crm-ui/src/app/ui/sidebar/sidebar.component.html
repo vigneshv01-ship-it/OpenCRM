@@ -1,22 +1,64 @@
-<nav id="sidebar" class="navbar navbar-dark bg-dark navbar-fixed-top rounded">
-  <ul class="nav sidebar-nav">
-    <li>
-      <a href="#">Dashboard</a>
-    </li>
-    <li>
-        <a href="#">Order</a>
-    </li>
-    <li>
-        <a href="#">Customer</a>
-    </li>
-    <li>
-        <a href="#">Employee</a>
-    </li>    
-    <li>
-        <a href="#">Reports</a>
-    </li>    
-    <li>
-        <a href="#">Configuration</a>
-    </li>                
-  </ul>  
-</nav>
+<div id="sidebar">
+    <mat-accordion multi="true">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Home
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-nav-list>
+              <a mat-list-item href="#" (click)="menuClick(menu.name)" *ngFor="let menu of displayNavMenu('home')"> {{ menu.name }} </a>
+           </mat-nav-list>        
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Order
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-nav-list>
+                <a mat-list-item href="#" (click)="menuClick(menu.name)" *ngFor="let menu of displayNavMenu('order')"> {{ menu.name }} </a>
+             </mat-nav-list>        
+          </mat-expansion-panel>
+          <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Reports
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <mat-nav-list>
+                  <a mat-list-item href="#" (click)="menuClick(menu.name)" *ngFor="let menu of displayNavMenu('report')"> {{ menu.name }} </a>
+               </mat-nav-list>        
+          </mat-expansion-panel>
+          <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Customers
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <mat-nav-list>
+                  <a mat-list-item href="#" (click)="menuClick(menu.name)" *ngFor="let menu of displayNavMenu('customer')"> {{ menu.name }} </a>
+                </mat-nav-list>        
+            </mat-expansion-panel>          
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Products
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-nav-list>
+                    <a mat-list-item href="#" (click)="menuClick(menu.name)" *ngFor="let menu of displayNavMenu('product')"> {{ menu.name }} </a>
+                  </mat-nav-list>        
+              </mat-expansion-panel>   
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Employee
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-nav-list>
+                    <a mat-list-item href="#" (click)="menuClick(menu.name)" *ngFor="let menu of displayNavMenu('employee')"> {{ menu.name }} </a>
+                  </mat-nav-list>        
+              </mat-expansion-panel>                                                    
+      </mat-accordion>
+</div>
