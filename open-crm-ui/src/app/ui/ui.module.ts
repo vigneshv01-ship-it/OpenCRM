@@ -10,6 +10,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTableModule} from '@angular/material/table';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [LayoutComponent, HeaderComponent, FooterComponent, SidebarComponent],
@@ -20,7 +21,8 @@ import {MatTableModule} from '@angular/material/table';
     MatButtonModule,
     MatIconModule,
     MatFormFieldModule,
-    MatTableModule
+    MatTableModule,
+    MatInputModule
     
   ],
   exports: [LayoutComponent]
