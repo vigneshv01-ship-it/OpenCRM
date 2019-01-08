@@ -7,7 +7,7 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
           <mat-nav-list>
-              <a mat-list-item href="#" (click)="menuClick(menu.name)" *ngFor="let menu of displayNavMenu('home')"> {{ menu.name }} </a>
+              <a mat-list-item href="{{menu.url}}" (click)="menuClick(menu.name)" *ngFor="let menu of displayNavMenu('home')"> {{ menu.name }} </a>
            </mat-nav-list>        
         </mat-expansion-panel>
         <mat-expansion-panel>
@@ -17,7 +17,7 @@
               </mat-panel-title>
             </mat-expansion-panel-header>
             <mat-nav-list>
-                <a mat-list-item href="#" (click)="menuClick(menu.name)" *ngFor="let menu of displayNavMenu('order')"> {{ menu.name }} </a>
+                <a mat-list-item href="{{menu.url}}" (click)="menuClick(menu.name)" *ngFor="let menu of displayNavMenu('order')"> {{ menu.name }} </a>
              </mat-nav-list>        
           </mat-expansion-panel>
           <mat-expansion-panel>
@@ -27,7 +27,7 @@
                 </mat-panel-title>
               </mat-expansion-panel-header>
               <mat-nav-list>
-                  <a mat-list-item href="#" (click)="menuClick(menu.name)" *ngFor="let menu of displayNavMenu('report')"> {{ menu.name }} </a>
+                  <a mat-list-item href="{{menu.url}}" (click)="menuClick(menu.name)" *ngFor="let menu of displayNavMenu('report')"> {{ menu.name }} </a>
                </mat-nav-list>        
           </mat-expansion-panel>
           <mat-expansion-panel>
@@ -37,7 +37,7 @@
                 </mat-panel-title>
               </mat-expansion-panel-header>
               <mat-nav-list>
-                  <a mat-list-item href="#" (click)="menuClick(menu.name)" *ngFor="let menu of displayNavMenu('customer')"> {{ menu.name }} </a>
+                  <a mat-list-item href="{{menu.url}}" (click)="menuClick(menu.name)" *ngFor="let menu of displayNavMenu('customer')"> {{ menu.name }} </a>
                 </mat-nav-list>        
             </mat-expansion-panel>          
             <mat-expansion-panel>
@@ -47,7 +47,7 @@
                   </mat-panel-title>
                 </mat-expansion-panel-header>
                 <mat-nav-list>
-                    <a mat-list-item href="#" (click)="menuClick(menu.name)" *ngFor="let menu of displayNavMenu('product')"> {{ menu.name }} </a>
+                    <a mat-list-item href="{{menu.url}}" (click)="menuClick(menu.name)" *ngFor="let menu of displayNavMenu('product')"> {{ menu.name }} </a>
                   </mat-nav-list>        
               </mat-expansion-panel>   
             <mat-expansion-panel>
@@ -57,7 +57,7 @@
                   </mat-panel-title>
                 </mat-expansion-panel-header>
                 <mat-nav-list>
-                    <a mat-list-item href="#" (click)="menuClick(menu.name)" *ngFor="let menu of displayNavMenu('employee')"> {{ menu.name }} </a>
+                    <a mat-list-item href="{{menu.url}}" (click)="menuClick(menu.name)" *ngFor="let menu of displayNavMenu('employee')"> {{ menu.name }} </a>
                   </mat-nav-list>        
               </mat-expansion-panel>                                                    
       </mat-accordion>

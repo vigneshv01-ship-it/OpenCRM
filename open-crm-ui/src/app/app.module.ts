@@ -13,7 +13,7 @@ import { UiModule } from './ui/ui.module';
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
-    UiModule,
+    UiModule
   ],
   exports: [
   ],

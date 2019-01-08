@@ -1,2 +1,9 @@
-<app-layout></app-layout>
-<router-outlet></router-outlet>
+<app-header></app-header>
+<app-sidebar (pageContain)="getPageDetail($event)"></app-sidebar>
+<div id="container">
+    <div id="main_content">
+            <router-outlet></router-outlet>
+    </div>
+</div>    
+<app-footer></app-footer>
+
