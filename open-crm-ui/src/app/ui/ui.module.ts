@@ -9,7 +9,7 @@ import { MatListModule } from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatTableDataSource} from '@angular/material';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [LayoutComponent, HeaderComponent, FooterComponent, SidebarComponent],
@@ -20,7 +20,8 @@ import {MatTableDataSource} from '@angular/material';
     MatButtonModule,
     MatIconModule,
     MatFormFieldModule,
-    MatTableDataSource,
+    MatTableModule
+    
   ],
   exports: [LayoutComponent]
 })
