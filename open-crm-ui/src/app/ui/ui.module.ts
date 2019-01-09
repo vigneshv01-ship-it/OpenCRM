@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LayoutComponent } from './layout/layout.component';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -15,12 +14,14 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
-  declarations: [LayoutComponent, HeaderComponent, FooterComponent, SidebarComponent, AllOrdersComponent, DashboardComponent],
+  declarations: [HeaderComponent, FooterComponent, SidebarComponent, AllOrdersComponent, DashboardComponent],
   imports: [
     CommonModule,
+    AppRoutingModule,
     MatExpansionModule,
     MatListModule,
     MatButtonModule,

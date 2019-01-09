@@ -4,8 +4,9 @@ import { AllOrdersComponent } from "./ui/all-orders/all-orders.component";
 import { DashboardComponent } from "./ui/dashboard/dashboard.component";
 
 const routes: Routes = [
+  {path: '*', redirectTo: '/dashboardFull', pathMatch: 'full'},
   {path: 'all-orders', component: AllOrdersComponent},
-  {path: 'dashboard', component: DashboardComponent},
+  {path: 'dashboard', component: DashboardComponent}
 ];
 
 @NgModule({
