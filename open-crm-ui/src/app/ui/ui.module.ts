@@ -16,7 +16,6 @@ import {MatInputModule} from '@angular/material/input';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from '../app-routing.module';
 
-
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, SidebarComponent, AllOrdersComponent, DashboardComponent],
   imports: [
@@ -29,7 +28,6 @@ import { AppRoutingModule } from '../app-routing.module';
     MatFormFieldModule,
     MatTableModule,
     MatInputModule
-    
   ],
   exports: [
     HeaderComponent,

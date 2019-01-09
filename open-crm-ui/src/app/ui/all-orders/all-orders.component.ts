@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material';
+import { tblOrder } from 'src/app/model/orders-model';
+import { OrderService } from 'src/app/order.service';
 
 export interface PeriodicElement {
   name: string;
@@ -29,18 +31,26 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 export class AllOrdersComponent implements OnInit {
   getPageName: string;  
+  orderModel: tblOrder[];
+  orderList: tblOrder[];
 
-  constructor() { }
+  constructor(private orderService: OrderService) { }
 
   ngOnInit() {
+    this.getOrderList();
   }
 
   getPageDetail($event) {
     this.getPageName = $event;
   }
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  getOrderList(): void{
+    this.orderList = this.orderService.getOrderList();
+//    alert(this.orderList[0].id);
+  }
+
+  displayedColumns: string[] = ['id', 'customer', 'salesman', 'status'];
+  dataSource = new MatTableDataSource(this.orderList);
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
