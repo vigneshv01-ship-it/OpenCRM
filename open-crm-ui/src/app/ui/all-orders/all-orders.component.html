@@ -1,6 +1,6 @@
-<h1>{{getPageName}}</h1>
+<h1>All Orders</h1>
 <mat-form-field>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter Condition">
   </mat-form-field>
   
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">

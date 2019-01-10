@@ -24,7 +24,11 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 const tmporderList: tblOrder[] = [
-  {id: 'ORD23234', customer: 'Mohan Stores', salesman: 'Vignesh', cost: 20, status: 'Completed'}
+  {id: 'ORD23234', customer: 'Mohan Stores', salesman: 'Vignesh', cost: 20, status: 'Completed'},
+  {id: 'ORD45279', customer: 'Immanuel Stores', salesman: 'Vignesh', cost: 300, status: 'In Progress'},
+  {id: 'ORD01821', customer: 'Madras Supermarket', salesman: 'Vignesh', cost: 5000, status: 'Completed'},
+  {id: 'ORD46473', customer: 'Might Mart', salesman: 'Vignesh', cost: 20, status: 'Completed'},
+  {id: 'ORD29201', customer: 'RK Stores', salesman: 'Vignesh', cost: 20, status: 'In Progress'}
 ]
 
 @Component({
@@ -59,6 +63,10 @@ export class AllOrdersComponent implements OnInit {
   displayedColumns: string[] = ['id', 'customer', 'salesman', 'status'];
   dataSource = new MatTableDataSource(tmporderList);
 
+  getDataSource(): void {
+
+  }
+  
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
