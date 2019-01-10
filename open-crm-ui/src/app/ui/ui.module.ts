@@ -5,6 +5,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { AllOrdersComponent } from './all-orders/all-orders.component';
+import { DefaultSearchComponent } from './default-search/default-search.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
@@ -13,11 +15,11 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
-import { DashboardComponent } from './dashboard/dashboard.component';
+
 import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, SidebarComponent, AllOrdersComponent, DashboardComponent],
+  declarations: [HeaderComponent, FooterComponent, SidebarComponent, AllOrdersComponent, DashboardComponent, DefaultSearchComponent],
   imports: [
     CommonModule,
     AppRoutingModule,
