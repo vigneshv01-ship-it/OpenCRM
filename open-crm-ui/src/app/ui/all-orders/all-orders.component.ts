@@ -23,6 +23,10 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
 ];
 
+const tmporderList: tblOrder[] = [
+  {id: 'ORD23234', customer: 'Mohan Stores', salesman: 'Vignesh', cost: 20, status: 'Completed'}
+]
+
 @Component({
   selector: 'app-all-orders',
   templateUrl: './all-orders.component.html',
@@ -34,7 +38,9 @@ export class AllOrdersComponent implements OnInit {
   orderModel: tblOrder[];
   orderList: tblOrder[];
 
-  constructor(private orderService: OrderService) { }
+  constructor(private orderService: OrderService) {
+    
+   }
 
   ngOnInit() {
     this.getOrderList();
@@ -46,11 +52,12 @@ export class AllOrdersComponent implements OnInit {
 
   getOrderList(): void{
     this.orderList = this.orderService.getOrderList();
-//    alert(this.orderList[0].id);
+    console.log(ELEMENT_DATA[0].name);
+    console.log(this.orderList[0].id);
   }
 
   displayedColumns: string[] = ['id', 'customer', 'salesman', 'status'];
-  dataSource = new MatTableDataSource(this.orderList);
+  dataSource = new MatTableDataSource(tmporderList);
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
