@@ -1,4 +1,8 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+
 import { tblOrder } from "./model/orders-model";
 import { orderList } from "./data/mock/mock-order-data";
 
@@ -7,9 +11,9 @@ import { orderList } from "./data/mock/mock-order-data";
 })
 export class OrderService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getOrderList(): tblOrder[] {
-    return orderList;
+  getOrderList(): Observable<tblOrder[]> {
+    return this.http.get<tblOrder[]>("https://script.google.com/macros/s/AKfycbxLboi7OM7H7xc-Rwe0QvJVh8jk8HdLAPznItq7E2OOrQmLSYM/exec")
   }
 }

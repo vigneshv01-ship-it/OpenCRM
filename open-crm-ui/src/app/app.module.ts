@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { HttpClientModule }    from '@angular/common/http';
 import { UiModule } from './ui/ui.module';
 
 @NgModule({
@@ -14,7 +15,8 @@ import { UiModule } from './ui/ui.module';
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
-    UiModule
+    UiModule,
+    HttpClientModule
   ],
   exports: [
     AppRoutingModule

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material';
 import { tblOrder } from 'src/app/model/orders-model';
 import { OrderService } from 'src/app/order.service';
+import { orderList } from 'src/app/data/mock/mock-order-data';
 
 export interface PeriodicElement {
   name: string;
@@ -40,7 +41,7 @@ const tmporderList: tblOrder[] = [
 export class AllOrdersComponent implements OnInit {
   getPageName: string;  
   orderModel: tblOrder[];
-  orderList: tblOrder[];
+  orderList1: any[];
 
   constructor(private orderService: OrderService) {
     
@@ -55,13 +56,15 @@ export class AllOrdersComponent implements OnInit {
   }
 
   getOrderList(): void{
-    this.orderList = this.orderService.getOrderList();
-    console.log(ELEMENT_DATA[0].name);
-    console.log(this.orderList[0].id);
+    this.orderService.getOrderList()
+    .subscribe(orderList => 
+      this.dataSource = new MatTableDataSource(orderList)
+      )
+    
   }
 
   displayedColumns: string[] = ['id', 'customer', 'salesman', 'status'];
-  dataSource = new MatTableDataSource(tmporderList);
+  dataSource: any;
 
   getDataSource(): void {
 
