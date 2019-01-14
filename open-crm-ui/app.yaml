@@ -1,0 +1,12 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+
+- url: /
+  static_files: dist/open-crm-ui/index.html
+  upload: dist/open-crm-ui/index.html
+
+- url: /
+  static_dir: dist/open-crm-ui

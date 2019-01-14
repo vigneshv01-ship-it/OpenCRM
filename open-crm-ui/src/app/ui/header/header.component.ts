@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OrderService } from "../../order.service";
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  notificationCount: string = null;
+  notificationStatus: string = "notifications_none";
+
+  constructor(private orderService: OrderService) { }
 
   ngOnInit() {
+    setInterval(
+      () => this.showNotification(),
+      1000
+    );
+  }
+
+  showNotification(): void {
+    this.orderService.getOrderNotification()
+    .subscribe(
+      notification => 
+      {
+        if(notification == "0" || notification == null) {
+          this.notificationStatus = "notifications_none";
+          this.notificationCount = null;  
+        }
+        else {
+          this.notificationStatus = "notifications_active";
+          this.notificationCount = notification;  
+        }
+        
+      }
+    )
   }
 
 }

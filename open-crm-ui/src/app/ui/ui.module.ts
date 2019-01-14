@@ -18,6 +18,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatBadgeModule} from '@angular/material/badge';
 
 import { AppRoutingModule } from '../app-routing.module';
 import { AddOrderComponent } from './add-order/add-order.component';
@@ -36,6 +37,7 @@ import { AddOrderComponent } from './add-order/add-order.component';
     MatInputModule,
     MatProgressBarModule,
     MatStepperModule,
+    MatBadgeModule,
     ReactiveFormsModule,
     //FormBuilder,
     FormsModule,

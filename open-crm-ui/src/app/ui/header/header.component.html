@@ -1,15 +1,10 @@
-<mat-progress-bar
-    class="example-margin"
-    [color]="accent"
-    [mode]="indeterminate">
-</mat-progress-bar>
 <div id="header">
   <button mat-flat-button color="primary" id="logo">OpenCRM</button>
   <button mat-icon-button id="user">
       <mat-icon aria-label="User">person</mat-icon>
   </button>
   <button mat-icon-button id="notification">
-      <mat-icon aria-label="Notification">notifications_none</mat-icon>
+      <mat-icon aria-label="Notification" matBadge="{{notificationCount}}" matBadgePosition="below after" matBadgeOverlap="false" matBadgeColor="accent">{{notificationStatus}}</mat-icon>
   </button>
   <div class="clear"></div>
 </div>
