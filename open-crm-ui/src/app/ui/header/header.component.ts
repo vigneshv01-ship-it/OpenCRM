@@ -15,8 +15,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     setInterval(
-      () => this.showNotification(),
-      1000
+      () => this.showNotification(), 10000
     );
   }
 
@@ -31,7 +30,7 @@ export class HeaderComponent implements OnInit {
         }
         else {
           this.notificationStatus = "notifications_active";
-          this.notificationCount = notification;  
+          this.notificationCount = notification;    
         }
         
       }
