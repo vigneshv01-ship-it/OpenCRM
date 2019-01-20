@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     setInterval(
-      () => this.showNotification(), 10000
+      () => this.showNotification(), 10000000 //10000
     );
   }
 

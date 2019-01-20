@@ -9,4 +9,4 @@ handlers:
   upload: dist/open-crm-ui/index.html
 
 - url: /
-  static_dir: dist/open-crm-ui
+  static_dir: dist/open-crm-ui/

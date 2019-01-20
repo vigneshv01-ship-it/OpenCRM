@@ -1,13 +1,32 @@
 <h1>Add Order</h1>
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
-  <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
+  <mat-step id="addOrderStepper1" [stepControl]="customerFormGroup">
+    <form id="customerForm" [formGroup]="customerFormGroup" style="display: block; width: 80%; margin: 0px auto;">
       <ng-template matStepLabel>Customer Details</ng-template>
-      <mat-form-field>
-        <input matInput placeholder="Customer name" formControlName="firstCtrl" required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperNext>Next</button>
+      <table style="width: 100%">
+        <tr>
+          <td>
+            <mat-form-field style="width: 100%; margin: 0px auto; display: block;padding-top: 30px;">
+                <mat-select id="customerName" placeholder="Customer Name" #refCustomerName formControlName="firstCtrl" (selectionChange)="onCustomerNameSelect(refCustomerName.value)" required>
+                    <mat-option *ngFor="let customerName of customerList" [value]="customerName" data-address="customerName[1]">
+                      {{customerName[0]}}
+                    </mat-option>
+                  </mat-select>
+              </mat-form-field>
+            </td>
+          </tr>
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <textarea matInput placeholder="Address" #customerAddress>
+                    {{getCustomerAddress}}
+                  </textarea>
+              </mat-form-field>
+              </td>  
+            </tr>
+        </table>
+      <div >
+      <button mat-button matStepperNext>Next</button>
       </div>
     </form>
   </mat-step>
@@ -24,9 +43,12 @@
     </form>
   </mat-step>
   <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    You are now done.
+    <ng-template matStepLabel>Review and Submit</ng-template>
+    <mat-label>Customer Name:</mat-label>  {{refCustomerName.value}}
+    <br/>
+    You are now done. {{buttonClick}}
     <div>
+      <button mat-button (click)="addOrder()">Add Order</button>      
       <button mat-button matStepperPrevious>Back</button>
       <button mat-button (click)="stepper.reset()">Reset</button>
     </div>
