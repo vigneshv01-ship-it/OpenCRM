@@ -7,7 +7,7 @@
         <tr>
           <td>
             <mat-form-field style="width: 100%; margin: 0px auto; display: block;padding-top: 30px;">
-                <mat-select id="customerName" placeholder="Customer Name" #refCustomerName formControlName="firstCtrl" (selectionChange)="onCustomerNameSelect(refCustomerName.value)" required>
+                <mat-select id="customerName" placeholder="Customer Name" #refCustomerName formControlName="customerCtrl" (selectionChange)="onCustomerNameSelect(refCustomerName.value)" required>
                     <mat-option *ngFor="let customerName of customerList" [value]="customerName" data-address="customerName[1]">
                       {{customerName[0]}}
                     </mat-option>
@@ -17,10 +17,8 @@
           </tr>
             <tr>
               <td>
-                <mat-form-field class="example-full-width">
-                  <textarea matInput placeholder="Address" #customerAddress>
-                    {{getCustomerAddress}}
-                  </textarea>
+                <mat-form-field class="full-width">
+                  <textarea matInput placeholder="Address" #customerAddress>{{getCustomerAddress}}</textarea>
               </mat-form-field>
               </td>  
             </tr>
@@ -30,11 +28,11 @@
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
+  <mat-step id="addOrderStepper2" [stepControl]="productFormGroup">
+    <form [formGroup]="productFormGroup">
       <ng-template matStepLabel>Product Details</ng-template>
       <mat-form-field>
-        <input matInput placeholder="Product Name" formControlName="secondCtrl" required>
+        <input matInput placeholder="Product Name" formControlName="productCtrl" required>
       </mat-form-field>
       <div>
         <button mat-button matStepperPrevious>Back</button>

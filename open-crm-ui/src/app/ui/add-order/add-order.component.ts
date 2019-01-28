@@ -11,7 +11,7 @@ import {FormBuilder, FormsModule, FormGroup, Validators} from '@angular/forms';
 export class AddOrderComponent implements OnInit {
   isLinear = false;
   customerFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
+  productFormGroup: FormGroup;
   customerList: customers[];
   getCustomerAddress: String;
   buttonClick: string;
@@ -26,10 +26,10 @@ export class AddOrderComponent implements OnInit {
     this.getCustomerList();
     
     this.customerFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
+      customerCtrl: ['', Validators.required]
     });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
+    this.productFormGroup = this._formBuilder.group({
+      productCtrl: ['', Validators.required]
     });
   }
 
@@ -43,10 +43,8 @@ export class AddOrderComponent implements OnInit {
       )
   }
 
-  onCustomerNameSelect(event: any): void {
-    console.log("select triggered");
-
-    this.getCustomerAddress = event[1];
+  onCustomerNameSelect(value: string[]): void {
+    this.getCustomerAddress = value[1].trim();
     console.log(this.getCustomerAddress);
   }
 
